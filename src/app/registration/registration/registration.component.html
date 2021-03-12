@@ -1,0 +1,119 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Register</div>
+
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate >
+
+          <div class="form-group row">
+            <label for="name" class="col-md-4 col-form-label text-md-right"
+              >Name</label
+            >
+
+            <div class="col-md-6">
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                formControlName="name"
+                [ngClass]="displayFieldCss('name')"
+                value=""
+                required
+                autocomplete="name"
+                autofocus
+              />
+              <app-field-error-display
+                [displayError]="isRequiredFieldValid('name')"
+                errorMsg="Name is required">
+              </app-field-error-display>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email" class="col-md-4 col-form-label text-md-right"
+              >E-Mail Address</label
+            >
+
+            <div class="col-md-6">
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                formControlName="email"
+                [ngClass]="displayFieldCss('email')"
+                value=""
+                required
+                autocomplete="email"
+              />
+              <app-field-error-display
+                [displayError]="isRequiredFieldValid('email')"
+                errorMsg="Email is required" >
+              </app-field-error-display>
+              <app-field-error-display
+                [displayError]="isPatternFieldValid('email')"
+                errorMsg="Email is invalid" >
+              </app-field-error-display>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right"
+              >Password</label
+            >
+
+            <div class="col-md-6">
+              <input
+                id="password"
+                type="password"
+                class="form-control"
+                formControlName="password"
+                [ngClass]="displayFieldCss('password')"
+                required
+                autocomplete="new-password"
+              />
+              <app-field-error-display
+                [displayError]="isRequiredFieldValid('password')"
+                errorMsg="Password is required" >
+              </app-field-error-display>
+              <app-field-error-display
+                [displayError]="isMinLengthFieldValid('password')"
+                errorMsg="Phone needs to be at least 6 characters long" >
+              </app-field-error-display>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label
+              for="password-confirm"
+              class="col-md-4 col-form-label text-md-right"
+              >Confirm Password</label
+            >
+
+            <div class="col-md-6">
+              <input
+                id="password-confirm"
+                type="password"
+                class="form-control"
+                formControlName="password_confirmation"
+                [ngClass]="displayFieldCss('password_confirmation')"
+                required
+                autocomplete="new-password"
+              />
+              <app-field-error-display
+                [displayError]="isPasswordMatching()"
+                errorMsg="Confirmation must match" >
+              </app-field-error-display>
+            </div>
+          </div>
+
+          <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
