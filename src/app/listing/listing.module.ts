@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FoodListingComponent } from './food-listing/food-listing.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { MenuComponent } from './menu/menu.component';
+import { SearchComponent } from './search/search.component';
 
 
 
 @NgModule({
-  declarations: [FoodListingComponent],
+  declarations: [RestaurantsComponent, MenuComponent, SearchComponent],
   imports: [
     CommonModule
   ]

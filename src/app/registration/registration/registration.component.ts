@@ -2,7 +2,7 @@ import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ConfirmPasswordValidator } from 'src/app/_helpers/confirmpassword.validator';
-import { User } from '../../models/user';
+import { User } from '../../_models/user';
 
 @Component({
   selector: 'app-registration',
@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
       ]],
       password: [this.user.password, [
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(8)
       ]],
       password_confirmation: [this.user.password_confirmation, Validators.required],
     }, { validator : ConfirmPasswordValidator.MatchPassword });
@@ -36,7 +36,14 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(){
     if (this.registerForm.valid) {
-      this.userService.register(this.user).subscribe(res => console.log(res['data']));
+
+      this.user.name = this.name!.value;
+      this.user.email = this.email!.value;
+      this.user.password = this.password!.value;
+      this.user.password_confirmation = this.password_confirmation!.value;
+
+      this.userService.register(this.registerForm.value).subscribe(res => console.log(res));
+
     } else {
       // validate all form fields
       this.attemptedSubmit = true;
@@ -57,7 +64,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   isPasswordMatching(){
-    return this.attemptedSubmit && this.confirm_password!.touched && this.confirm_password!.errors?.ConfirmPassword;
+    return this.attemptedSubmit && this.password_confirmation!.touched && this.password_confirmation!.errors?.ConfirmPassword;
   }
 
   displayFieldCss(field: string) {
@@ -80,6 +87,6 @@ export class RegistrationComponent implements OnInit {
   get name() { return this.registerForm.get('name'); }
   get email() { return this.registerForm.get('email'); }
   get password() { return this.registerForm.get('password'); }
-  get confirm_password() { return this.registerForm.get('password_confirmation'); }
+  get password_confirmation() { return this.registerForm.get('password_confirmation'); }
 
 }

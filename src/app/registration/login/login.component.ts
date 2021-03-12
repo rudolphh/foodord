@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmPasswordValidator } from 'src/app/_helpers/confirmpassword.validator';
-import { User } from '../../models/user';
+import { User } from '../../_models/user';
 
 @Component({
   selector: 'app-login',
