@@ -11,3 +11,15 @@ body {
   text-align: left;
   background-color: #f8fafc;
 }
+
+#search-card-body {
+  height: 80vh; display: flex; flex-direction: column; justify-content: center;
+}
+
+#search-header {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.open-AddBookDialog {
+  margin-right: 5px;
+}

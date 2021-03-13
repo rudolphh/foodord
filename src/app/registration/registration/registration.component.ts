@@ -42,7 +42,12 @@ export class RegistrationComponent implements OnInit {
       this.user.password = this.password!.value;
       this.user.password_confirmation = this.password_confirmation!.value;
 
-      this.userService.register(this.registerForm.value).subscribe(res => console.log(res));
+      this.userService.register(this.registerForm.value).subscribe(res => {
+        if(res.data){
+          console.log(res.data);
+          sessionStorage.setItem('currentUser', JSON.stringify(res.data));
+        }
+      });
 
     } else {
       // validate all form fields
