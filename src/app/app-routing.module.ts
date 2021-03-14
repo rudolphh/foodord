@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './registration/login/login.component';
 import { RegistrationComponent } from './registration/registration/registration.component';
+import { MenuComponent } from './listing/menu/menu.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'restaurants', component: RestaurantsComponent },
+  { path: 'menu', component: MenuComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
  // { path: 'products/:id', component: ProductDetailsComponent },

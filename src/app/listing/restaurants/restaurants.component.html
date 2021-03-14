@@ -1,15 +1,12 @@
-<div class="row justify-content-center">
-  <div class="col-8 justify-content-center p-3">
-    <input
-      type="text"
-      placeholder="Search Food Items"
-      aria-label="Search"
-      class="form-control"
-    />
+<div class="row">
+  <div class="col-8 p-3">
+    <h4 style="color: rgba(0, 0, 0, 0.5);">Restaurants</h4>
   </div>
 </div>
 <div class="row justify-content-center">
   <div class="card-columns">
+
+    <a routerLink="/menu">
     <div class="card booking-card">
       <div class="view overlay">
         <img
@@ -19,31 +16,15 @@
         />
         <a href="#!"><div class="mask rgba-white-slight"></div></a>
       </div>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold"><a>Tandoor Point</a></h4>
-        <p class="text-muted">
-          Mughlai, North Indian, Chinese, Restaurant | Rating:
-          <strong>3.0</strong> | INR: ₹ 230
-        </p>
-        <p class="card-text">Chicken Kadai</p>
-        <a
-          data-toggle="modal"
-          data-id="Chicken Kadai | 230 ₹ "
-          title="Add this item"
-          href="#addBookDialog"
-          class="open-AddBookDialog btn btn-primary"
-          >Add to Cart</a
-        >
-        <button
-          type="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          class="btn btn-primary"
-        >
-          Buy / Order
-        </button>
+      <div class="card-body restaurant-card" >
+        <h5 class="card-title font-weight-bold">Tandoor Point</h5>
+        <div class="restaurant-rating" ><strong>3.0</strong> </div>
+        <span class="fa fa-star"></span>
       </div>
     </div>
+    </a>
+
+    <a routerLink="/menu">
     <div class="card booking-card">
       <div class="view overlay">
         <img
@@ -53,30 +34,15 @@
         />
         <a href="#!"><div class="mask rgba-white-slight"></div></a>
       </div>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold"><a>Hotel Shalimar</a></h4>
-        <p class="text-muted">
-          Indian, Restaurant | Rating: <strong>3.2</strong> | INR: ₹ 100
-        </p>
-        <p class="card-text">Chicken Dry Fry</p>
-        <a
-          data-toggle="modal"
-          data-id="Chicken Dry Fry | 100 ₹ "
-          title="Add this item"
-          href="#addBookDialog"
-          class="open-AddBookDialog btn btn-primary"
-          >Add to Cart</a
-        >
-        <button
-          type="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          class="btn btn-primary"
-        >
-          Buy / Order
-        </button>
+      <div class="card-body restaurant-card">
+        <h5 class="card-title font-weight-bold">Hotel Shalimar</h5>
+        <div class="restaurant-rating" ><strong>3.2</strong> </div>
+        <span class="fa fa-star"></span>
       </div>
     </div>
+    </a>
+
+    <a routerLink="/menu">
     <div class="card booking-card">
       <div class="view overlay">
         <img
@@ -86,31 +52,15 @@
         />
         <a href="#!"><div class="mask rgba-white-slight"></div></a>
       </div>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold"><a>Hotel Malabar</a></h4>
-        <p class="text-muted">
-          Chinese, North Indian, Restaurant | Rating: <strong>4.3</strong> |
-          INR: ₹ 145
-        </p>
-        <p class="card-text">Chicken Pakora</p>
-        <a
-          data-toggle="modal"
-          data-id="Chicken Pakora | 145 ₹ "
-          title="Add this item"
-          href="#addBookDialog"
-          class="open-AddBookDialog btn btn-primary"
-          >Add to Cart</a
-        >
-        <button
-          type="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          class="btn btn-primary"
-        >
-          Buy / Order
-        </button>
+      <div class="card-body restaurant-card">
+        <h5 class="card-title font-weight-bold"><a>Hotel Malabar</a></h5>
+        <div class="restaurant-rating" ><strong>4.3</strong> </div>
+        <span class="fa fa-star"></span>
       </div>
     </div>
+    </a>
+
+    <a routerLink="/menu">
     <div class="card booking-card">
       <div class="view overlay">
         <img
@@ -120,32 +70,17 @@
         />
         <a href="#!"><div class="mask rgba-white-slight"></div></a>
       </div>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold">
+      <div class="card-body restaurant-card">
+        <h5 class="card-title font-weight-bold">
           <a>Home Kitchen Services</a>
-        </h4>
-        <p class="text-muted">
-          North Indian, Restaurant | Rating: <strong>4.5</strong> | INR: ₹ 125
-        </p>
-        <p class="card-text">Chicken Fry</p>
-        <a
-          data-toggle="modal"
-          data-id="Chicken Fry | 125 ₹ "
-          title="Add this item"
-          href="#addBookDialog"
-          class="open-AddBookDialog btn btn-primary"
-          >Add to Cart</a
-        >
-        <button
-          type="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          class="btn btn-primary"
-        >
-          Buy / Order
-        </button>
+        </h5>
+        <div class="restaurant-rating" ><strong>4.5</strong> </div>
+        <span class="fa fa-star"></span>
       </div>
     </div>
+    </a>
+
+    <a routerLink="/menu">
     <div class="card booking-card">
       <div class="view overlay">
         <img
@@ -155,31 +90,15 @@
         />
         <a href="#!"><div class="mask rgba-white-slight"></div></a>
       </div>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold"><a>Cafe Peter</a></h4>
-        <p class="text-muted">
-          Korean, Continental, Bakery, Restaurant | Rating:
-          <strong>3.7</strong> | INR: ₹ 250
-        </p>
-        <p class="card-text">Cheese Chilli Toast</p>
-        <a
-          data-toggle="modal"
-          data-id="Cheese Chilli Toast | 250 ₹ "
-          title="Add this item"
-          href="#addBookDialog"
-          class="open-AddBookDialog btn btn-primary"
-          >Add to Cart</a
-        >
-        <button
-          type="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          class="btn btn-primary"
-        >
-          Buy / Order
-        </button>
+      <div class="card-body restaurant-card">
+        <h5 class="card-title font-weight-bold"><a>Cafe Peter</a></h5>
+        <div class="restaurant-rating" ><strong>3.7</strong> </div>
+        <span class="fa fa-star"></span>
       </div>
     </div>
+    </a>
+
+    <a routerLink="/menu">
     <div class="card booking-card">
       <div class="view overlay">
         <img
@@ -189,67 +108,14 @@
         />
         <a href="#!"><div class="mask rgba-white-slight"></div></a>
       </div>
-      <div class="card-body">
-        <h4 class="card-title font-weight-bold"><a>The Good Bowl</a></h4>
-        <p class="text-muted">
-          Fast Food, North Indian, Restaurant | Rating: <strong>3.0</strong> |
-          INR: ₹ 200
-        </p>
-        <p class="card-text">Immunity Booster Chole Rice Bowl</p>
-        <a
-          data-toggle="modal"
-          data-id="Immunity Booster Chole Rice Bowl | 200 ₹ "
-          title="Add this item"
-          href="#addBookDialog"
-          class="open-AddBookDialog btn btn-primary"
-          >Add to Cart</a
-        >
-        <button
-          type="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
-          class="btn btn-primary"
-        >
-          Buy / Order
-        </button>
+      <div class="card-body restaurant-card">
+        <h5 class="card-title font-weight-bold"><a>The Good Bowl</a></h5>
+        <div class="restaurant-rating" ><strong>3.0</strong> </div>
+        <span class="fa fa-star"></span>
       </div>
     </div>
+    </a>
+
   </div>
 </div>
-<div class="row justify-content-center pt-3">
-  <nav>
-    <ul class="pagination">
-      <li
-        aria-disabled="true"
-        aria-label="« Previous"
-        class="page-item disabled"
-      >
-        <span aria-hidden="true" class="page-link">‹</span>
-      </li>
-      <li aria-current="page" class="page-item active">
-        <span class="page-link">1</span>
-      </li>
-      <li class="page-item">
-        <a href="http://foodorb.rudyah.com/home?page=2" class="page-link">2</a>
-      </li>
-      <li class="page-item">
-        <a href="http://foodorb.rudyah.com/home?page=3" class="page-link">3</a>
-      </li>
-      <li class="page-item">
-        <a href="http://foodorb.rudyah.com/home?page=4" class="page-link">4</a>
-      </li>
-      <li class="page-item">
-        <a href="http://foodorb.rudyah.com/home?page=5" class="page-link">5</a>
-      </li>
-      <li class="page-item">
-        <a
-          href="http://foodorb.rudyah.com/home?page=2"
-          rel="next"
-          aria-label="Next »"
-          class="page-link"
-          >›</a
-        >
-      </li>
-    </ul>
-  </nav>
-</div>
+

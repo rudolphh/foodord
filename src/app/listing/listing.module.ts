@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,8 @@ import { HomeComponent } from './home/home.component';
   declarations: [RestaurantsComponent, MenuComponent, HomeComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class ListingModule { }
