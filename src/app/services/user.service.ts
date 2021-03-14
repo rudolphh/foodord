@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   registrationUrl : string = "http://api.rudyah.com/api/v1/register";
+  loginUrl : string = "http://api.rudyah.com/api/v1/login";
 
   constructor(private http : HttpClient) { }
 
   register(user : User) : Observable<any>{
-    console.log(user.email);
     const body = new HttpParams()
     .set('name', user.name!)
     .set('email', user.email!)
@@ -28,5 +28,19 @@ export class UserService {
       }
     );
 
+  }// end register
+
+  login(user : User) : Observable<any> {
+    const body = new HttpParams()
+    .set('email', user.email!)
+    .set('password', user.password!);
+
+    return this.http.post(this.loginUrl,
+      body.toString(),
+      {
+        headers: new HttpHeaders()
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+      }
+    );
   }
 }

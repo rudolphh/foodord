@@ -2,6 +2,7 @@ import { UserService } from './user.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuService } from './menu.service';
+import { LocalStorageService } from './local-storage.service';
 
 
 
@@ -12,7 +13,8 @@ import { MenuService } from './menu.service';
   ],
   providers: [
     UserService,
-    MenuService
+    MenuService,
+    LocalStorageService
   ]
 })
 export class ServicesModule { }

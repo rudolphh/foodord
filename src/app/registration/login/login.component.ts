@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmPasswordValidator } from 'src/app/_helpers/confirmpassword.validator';
 import { User } from '../../_models/user';
+import { UserService } from '../../services/user.service';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +17,12 @@ export class LoginComponent implements OnInit {
   public user : User = {};
   public attemptedSubmit : boolean = false;
 
-  constructor(private fb : FormBuilder) { }
+  constructor(
+    private fb : FormBuilder,
+    private userService : UserService,
+    private localStorageService : LocalStorageService,
+    private router : Router
+    ) { }
 
   ngOnInit(): void {
 
@@ -33,7 +41,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     if (this.loginForm.valid) {
+      this.user.email = this.email!.value;
+      this.user.password = this.password!.value;
 
+      this.userService.login(this.loginForm.value).subscribe(res => {
+        if(res.data){
+          //console.log(res.data);
+          this.localStorageService.set('currentUser', res.data);// save user in storage
+          this.router.navigate(['/home']);
+        }
+      });
 
     } else {
       // validate all form fields

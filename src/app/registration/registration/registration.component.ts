@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ConfirmPasswordValidator } from 'src/app/_helpers/confirmpassword.validator';
 import { User } from '../../_models/user';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +16,11 @@ export class RegistrationComponent implements OnInit {
   public user : User = {};
   public attemptedSubmit : boolean = false;
 
-  constructor(private fb : FormBuilder, private userService : UserService) { }
+  constructor(
+    private fb : FormBuilder,
+    private userService : UserService,
+    private localStorageService : LocalStorageService
+    ) { }
 
   ngOnInit(): void {
 
@@ -44,8 +49,8 @@ export class RegistrationComponent implements OnInit {
 
       this.userService.register(this.registerForm.value).subscribe(res => {
         if(res.data){
-          console.log(res.data);
-          sessionStorage.setItem('currentUser', JSON.stringify(res.data));
+          //console.log(res.data);
+          this.localStorageService.set('currentUser', res.data);
         }
       });
 

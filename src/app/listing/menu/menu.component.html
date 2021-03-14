@@ -6,11 +6,11 @@
           <h4 style="color: rgba(0, 0, 0, 0.5); margin-left: 2rem">Menu</h4>
         </div>
       </div>
-      <div class="card-body">
+      <div *ngFor="let menuItem of menuItems" class="card-body">
         <div class="card booking-card">
           <div class="view overlay">
             <img
-              src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366,h_240,c_fill/vx4uld2hyksrrlrmqpmg"
+              src="{{ menuItem.image_url }}"
               alt="Card image cap"
               class="card-img-top"
             />
@@ -18,16 +18,16 @@
           </div>
           <div class="card-body">
             <div class="menu-item-details">
-              <h4 class="card-title font-weight-bold"><a>Kabablo</a></h4>
+              <h4 class="card-title font-weight-bold"><a>{{ menuItem.name }}</a></h4>
               <p class="text-muted">
-                Indian, Restaurant | Rating: <strong>3.2</strong> | INR: ₹ 260
+                {{ menuItem.cost }} Rs.
               </p>
-              <p class="card-text">Cajun Spiced Chicken</p>
             </div>
             <div class="menu-item-add">
               <a
               data-toggle="modal"
-              data-id="Cajun Spiced Chicken | 260 ₹ "
+              data-id="{{ menuItem.id }}"
+              attr.data-menu-item="{{ menuItem.name }} | {{ menuItem.cost }} ₹ "
               title="Add this item"
               href="#addBookDialog"
               class="open-AddBookDialog btn btn-primary"

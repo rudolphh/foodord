@@ -47,6 +47,12 @@ body {
   margin-right: 5px;
 }
 
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+
 .menu-card .booking-card {
   display: flex;
   flex-direction: row;
@@ -57,10 +63,11 @@ body {
 .menu-card .card-body {
   display: flex;
   padding-right: 0;
+  padding-bottom: 0;
 }
 
 .menu-card .view {
-  flex: 1;
+  max-width: 210px;
 }
 
 .menu-item-add  {
@@ -73,3 +80,4 @@ body {
   margin-right: 0;
 }
 
+}
