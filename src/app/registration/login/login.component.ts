@@ -5,6 +5,7 @@ import { User } from '../../_models/user';
 import { UserService } from '../../services/user.service';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { Router } from '@angular/router';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb : FormBuilder,
     private userService : UserService,
-    private localStorageService : LocalStorageService,
+    private storageService : StorageService,
     private router : Router
     ) { }
 
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
       this.userService.login(this.loginForm.value).subscribe(res => {
         if(res.data){
           //console.log(res.data);
-          this.localStorageService.set('currentUser', res.data);// save user in storage
+          this.storageService.setItem('currentUser', JSON.stringify(res.data));// save user in storage
           this.router.navigate(['/home']);
         }
       });

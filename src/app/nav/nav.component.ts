@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../_models/user';
 import { LocalStorageService } from '../services/local-storage.service';
 import { LocalStorageChanges } from '../_models/localstoragechanges';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,17 +11,35 @@ import { LocalStorageChanges } from '../_models/localstoragechanges';
 })
 export class NavComponent implements OnInit {
 
-  localStorageChanges$ = this.localStorageService.changes$;
-  currentUser : User = {};
+  currentUser : any;
 
-  constructor(private localStorageService : LocalStorageService) { }
+  constructor(private storageService : StorageService) { }
 
   ngOnInit(): void {
-    this.localStorageChanges$.subscribe(data => {console.log(data); this.currentUser=(data as LocalStorageChanges).value as User})
+
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser')!);
+    this.storageService.watchStorage().subscribe((data:string) => {
+      // this will call whenever your localStorage data changes
+      // use localStorage code here and set your data here for ngFor
+      //this.currentUser = JSON.parse(data);
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser')!);
+
+    });
+
   }
 
   logout() {
-    this.localStorageService.remove('currentUser');
+    this.storageService.removeItem('currentUser');
+  }
+
+  // helper
+
+  isObject(obj : any) {
+    return obj === Object(obj);
+  }
+
+  isEmpty(obj : Object) : boolean {
+    return Object.keys(obj).keys.length === 0;
   }
 
 }

@@ -18,7 +18,7 @@
       <ul class="navbar-nav mr-auto"></ul>
 
       <!-- Right Side Of Navbar -->
-      <ul *ngIf="currentUser.name; else showLoginRegister" class="navbar-nav ml-auto">
+      <ul *ngIf="currentUser; else showLoginRegister" class="navbar-nav ml-auto">
         <!-- Search form -->
 
         <!-- User Links -->
@@ -60,25 +60,13 @@
                 Settings
               </a>
               <a
-                href="http://foodorb.rudyah.com/logout"
-                onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();"
+                routerLink="/home"
+                (click)="logout()"
                 class="dropdown-item"
               >
                 Logout
               </a>
-              <form
-                id="logout-form"
-                action="http://foodorb.rudyah.com/logout"
-                method="POST"
-                style="display: none"
-              >
-                <input
-                  type="hidden"
-                  name="_token"
-                  value="zFrYwd53BQaHnHGODpU7NJQECuUgAPzZROaIDpSO"
-                />
-              </form>
+
             </div>
           </li>
         </ul>

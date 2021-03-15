@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { ConfirmPasswordValidator } from 'src/app/_helpers/confirmpassword.validator';
 import { User } from '../../_models/user';
 import { LocalStorageService } from '../../services/local-storage.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-registration',
@@ -19,7 +20,7 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private fb : FormBuilder,
     private userService : UserService,
-    private localStorageService : LocalStorageService
+    private storageService : StorageService
     ) { }
 
   ngOnInit(): void {
@@ -50,7 +51,7 @@ export class RegistrationComponent implements OnInit {
       this.userService.register(this.registerForm.value).subscribe(res => {
         if(res.data){
           //console.log(res.data);
-          this.localStorageService.set('currentUser', res.data);
+          this.storageService.setItem('currentUser', JSON.stringify(res.data));
         }
       });
 
