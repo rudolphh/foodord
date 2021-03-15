@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MenuService } from './menu.service';
 import { LocalStorageService } from './local-storage.service';
 import { StorageService } from './storage.service';
+import { FriendService } from './friend.service';
 
 
 
@@ -15,7 +16,8 @@ import { StorageService } from './storage.service';
   providers: [
     UserService,
     MenuService,
-    StorageService
+    StorageService,
+    FriendService
   ]
 })
 export class ServicesModule { }

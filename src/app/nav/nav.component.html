@@ -53,20 +53,24 @@
               <a routerLink="/profile" class="dropdown-item">
                 Profile
               </a>
-              <a
-                routerLink="/settings"
-                class="dropdown-item"
-              >
-                Settings
+              <a routerLink="/friends" class="dropdown-item">
+                Friends
               </a>
-              <a
-                routerLink="/login"
-                (click)="logout()"
-                class="dropdown-item"
-              >
-                Logout
-              </a>
-
+              <div class="dropdown-divider"></div>
+                <a
+                  routerLink="/settings"
+                  class="dropdown-item"
+                >
+                  Settings
+                </a>
+                <a
+                  routerLink="/login"
+                  (click)="logout()"
+                  class="dropdown-item"
+                >
+                  Logout
+                </a>
+              
             </div>
           </li>
         </ul>

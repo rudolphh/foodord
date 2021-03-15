@@ -10,6 +10,7 @@ import { SettingsComponent } from './registration/settings/settings.component';
 import { CartComponent } from './ordering/cart/cart.component';
 import { ProfileComponent } from './registration/profile/profile.component';
 import { ForgotPasswordComponent } from './registration/forgot-password/forgot-password.component';
+import { FriendsComponent } from './listing/friends/friends.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'reset', component: ForgotPasswordComponent},
+  { path: 'friends', component: FriendsComponent},
  // { path: 'products/:id', component: ProductDetailsComponent },
  // { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }

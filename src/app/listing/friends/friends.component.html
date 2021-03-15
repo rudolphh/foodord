@@ -1,0 +1,40 @@
+<div class="justify-content-center">
+  <div>
+    <div class="card menu-card" style="padding: 20px 30px 20px 30px">
+      <div>
+        <div>
+          <h4 style="color: rgba(0, 0, 0, 0.5); margin-left: 2rem">Friends</h4>
+        </div>
+      </div>
+      <div *ngFor="let friend of friends" class="card-body">
+        <div class="card booking-card">
+          <div class="view overlay">
+            <img
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0HERESBxMQDxESEBEWDQ8PEhASDRASFxEWIhgRExMYHCggGBolGxMVITEhJSkrLi4uFx8zODMsNygtLi4BCgoKDQ0NDw0NDisZFRkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQUGBAMCB//EADUQAQABAgIHBQYFBQAAAAAAAAABAgMEEQUSITFRYXETM0GBkSIyQrHB8WKCodHhFBVScvD/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AP0QAAAAAAAAAAAAAAAAAAAAAAAAABCUAkAAAAAAAAAAAATRRNc5URnM7ohbYTRtNG2/7U8Phj9wVtnDV3+7iZ5+Hq7Leiap7yqI6ZytY2bkiK3+00/5T6Q8MRoyq3GdudbjHxfyuQGYGiu4a3e7ymJ5+Pq5LuiqKu6maZ57YFVA9cRh68POVyOkxul5AAAAAAAISgEgAAAAAAAAAERNWyNs+AsNEWNaZrq+HZT1/wC+YO3A4SMNGdW2qd88OUOoBAAAAAAHxdt03YmLkZxKgxVicPVNM+U8YaJW6aozimrhMx6/YFUAKAAAAISgEgAAAAAAAAAL7R9HZ26ecZz5qBprcasRHCI+QPoAQAAAAAAcOl+7/NDucWlu7/NAKUAUAAAAQlAJAAAAAAAAAAadmIaeQABAAAAAAByaTp1rdXLKf1daKozic+AMyE8gUAAAAQlAJAAAAAAAAABDTxOe1mV3o3EdtRlO+nZPTwkHYAIAAAAAAPHF3OyoqnlOXXweyq0xfzyop61fSAViQFAAAAEJQCQAAAAAAAAAHtg7/wDT1xVO7dV0eIDTU1RXETTtid0pV+h7utTNM/DOzpP2lYCAAAAAAPHF3uwomr06s/VVNUzNW2Znas9M3fdpjrP0+qrFAAAAAAEJQCQAAAAAAAAAAAdmirvZ15T8UZefgu2YictseDS0TrRE8YgH0AIAAAQDPYy52tdU88o6Q8SeYKAAAAAAISgEgAAAAAAAAABETVsjbPhC3wGA7P2r/veEeEdeYOTDaOru5TX7Mc98x0XURluSCAAAAAAKbSODqoqmq3GdM7Zy8J5uFp1TpLBant2d3xRw5wKrgAAAAAEJQCQAAAB7WcJcve5TOXGdkOu3omqe8qiOURmCuF1b0Zap97OrrP7Om3Yot93TTHlGfqCitYW5d9ymes7I9ZddnRUz305cqds+q2BHjYw1Fju4852z6vYAAAAAAAAAEb0gKzE6L1pzw85fhnd5S4L2GuWe8pmOe+PWGiAZgXt7AWrvhqzxp2fo4L2i66O6mKo9JFcImuiaNlcTE84yQAhKASAA98DZ7aumJ3b56Q8FpoW371U8oj6/QFmAIAAAAAAAAAAAAAAAAAAAA+a6Ir2VxExzV2K0ZE7cPs/DO7ylZgMxVE0zlVsmN8IW2l7ETEV0784irp4SqRUgAL3RtGpbp57fVRUxrTlHjLS26dSIiPCIj0gH0AIAAAAAAAAAAAAAAAAAAAAAA58dRr26ojh8mfahnsZZ7CuYjdvjpIrxAB06No17lPLOZ8v5yXyp0NRnNU8IiPX7LYQAAAAAAAAAAAAAAAAAAAAAAAAVOmqNtNXGJifL7rZwaYpzoieFUfqCnAFXOiKNW3M8apdzwwVGpbpjl83uIAAAAAAAAAAAAAAAAAAAAAAAAObSFOtar6Z+kul8XqdamqONM/IGbDIFaS17tP8ArHyfYCAAAAAAAAAAAAAAAAAAAAAAAACJAGfAFf/Z"
+              alt="Card image cap"
+              class="card-img-top"
+            />
+            <a href="#!"><div class="mask rgba-white-slight"></div></a>
+          </div>
+          <div class="card-body">
+            <div class="menu-item-details">
+              <h4 class="card-title font-weight-bold"><a>{{ friend.name }}</a></h4>
+              <p class="text-muted">
+                {{ friend.email }}
+              </p>
+            </div>
+            <div class="menu-item-add">
+              <a
+              data-toggle="modal"
+              data-id="{{ friend.id }}"
+              title="Add this item"
+              href="#addBookDialog"
+              class="open-AddBookDialog btn btn-primary"
+              >+ Add</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
