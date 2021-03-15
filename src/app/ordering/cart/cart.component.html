@@ -1,1 +1,39 @@
-<p>cart works!</p>
+<div class="row justify-content-left">
+  <div class="col-12">
+    <h3>Contents of your cart.</h3>
+    <p>Total Amount: INR ₹</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr. No.</th>
+          <th scope="col">Order</th>
+          <th scope="col">Cost</th>
+        </tr>
+      </thead>
+      <tbody id="menuList">
+        <tr *ngFor="let cartItem of cartItems; let i = index;">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ cartItem.name }}</td>
+          <td>{{ cartItem.cost }} ₹</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Total</th>
+          <td></td>
+          <td>{{ total }} ₹</td>
+        </tr>
+      </tbody>
+    </table>
+    <a
+      name=""
+      id="placeOrder"
+      (click)="placeOrder()"
+      role="button"
+      class="btn btn-primary"
+      >Place Order</a
+    >
+    <a name="" id="" href="/home" role="button" class="btn btn-outline-dark">
+      Home</a
+    >
+  </div>
+</div>

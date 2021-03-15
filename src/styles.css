@@ -47,37 +47,38 @@ body {
   margin-right: 5px;
 }
 
+#placeOrder {
+  margin-right: 5px;
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
+  .menu-card .booking-card {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+  }
 
+  .menu-card .card-body {
+    display: flex;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
 
-.menu-card .booking-card {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 20px 10px 20px;
-  width: 100%;
-}
+  .menu-card .view {
+    max-width: 210px;
+  }
 
-.menu-card .card-body {
-  display: flex;
-  padding-right: 0;
-  padding-bottom: 0;
-}
+  .menu-item-add  {
+    align-self: center;
+    margin-left: auto;
+    margin-right: 0;
+  }
 
-.menu-card .view {
-  max-width: 210px;
-}
-
-.menu-item-add  {
-  align-self: center;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.menu-item-add a {
-  margin-right: 0;
-}
+  .menu-item-add a {
+    margin-right: 0;
+  }
 
 }

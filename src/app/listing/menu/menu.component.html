@@ -27,9 +27,9 @@
               <a
               data-toggle="modal"
               data-id="{{ menuItem.id }}"
-              attr.data-menu-item="{{ menuItem.name }} | {{ menuItem.cost }} ₹ "
               title="Add this item"
               href="#addBookDialog"
+              (click)="menuItemSelected(menuItem, menuItem.name + ' | ' + menuItem.cost + ' ₹ ')"
               class="open-AddBookDialog btn btn-primary"
               >+ Add</a>
             </div>
@@ -38,4 +38,59 @@
       </div>
     </div>
   </div>
+</div>
+<div
+id="addBookDialog"
+tabindex="-1"
+role="dialog"
+aria-labelledby="exampleModalLabel1"
+class="modal fade"
+style="display: none"
+aria-hidden="true"
+>
+<div role="document" class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 id="exampleModalLabel1" class="modal-title">
+        Are you sure you want to add this item to cart?
+      </h5>
+      <button
+        type="button"
+        data-dismiss="modal"
+        aria-label="Close"
+        class="close"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      Add order to cart?
+      <div>Order Id:</div>
+      <p><input
+        type="text"
+        name="bookId"
+        id="bookId"
+        value="{{ itemDescription }}"
+        readonly="readonly"
+        style="width: 100%"
+      /></p>
+      <p>Click on Add to Cart to proceed further</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn btn-secondary">
+        Close
+      </button>
+      <button
+        type="button"
+        name=""
+        id="add_cart"
+        data-dismiss="modal"
+        class="btn btn-success"
+        (click)="addToCart()"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
 </div>

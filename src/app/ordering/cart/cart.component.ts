@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from '../../_models/menuitem';
+import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cartItems : MenuItem[] = [];
+
+  constructor(
+    private cartService : CartService,
+    private router : Router
+    ) { }
 
   ngOnInit(): void {
+    this.cartItems = this.cartService.getCartItems();
+  }
+
+  get total(){
+    return this.cartService.getTotalCost();
+  }
+
+  placeOrder(){
+
+    this.router.navigate(['tracking']);
   }
 
 }

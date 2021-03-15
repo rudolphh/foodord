@@ -9,7 +9,6 @@ import { MenuItem } from '../_models/menuitem';
 export class MenuService {
 
   menuItemsUrl : string = "http://api.rudyah.com/api/v1/feed";
-  menuItems : MenuItem [] = [];
 
   constructor(private http : HttpClient) { }
 
@@ -18,4 +17,5 @@ export class MenuService {
     return this.http.get<MenuItem[]>(this.menuItemsUrl);
 
   }
+
 }
