@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FieldErrorDisplayComponent } from './../field-error-display/field-error-display.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 
@@ -23,7 +24,6 @@ import { FieldErrorDisplayComponent } from './../field-error-display/field-error
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule  ]
 })
 export class RegistrationModule { }
