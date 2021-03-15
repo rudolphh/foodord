@@ -5,6 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './registration/login/login.component';
 import { RegistrationComponent } from './registration/registration/registration.component';
 import { MenuComponent } from './listing/menu/menu.component';
+import { TrackingComponent } from './ordering/tracking/tracking.component';
+import { SettingsComponent } from './registration/settings/settings.component';
+import { CartComponent } from './ordering/cart/cart.component';
+import { ProfileComponent } from './registration/profile/profile.component';
 
 
 const routes: Routes = [
@@ -14,6 +18,10 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'tracking', component: TrackingComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'settings', component: SettingsComponent },
  // { path: 'products/:id', component: ProductDetailsComponent },
  // { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }

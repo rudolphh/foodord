@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrderingComponent } from './ordering/ordering.component';
 import { TrackingComponent } from './tracking/tracking.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
 @NgModule({
-  declarations: [OrderingComponent, TrackingComponent],
+  declarations: [TrackingComponent, CartComponent],
   imports: [
     CommonModule
   ]

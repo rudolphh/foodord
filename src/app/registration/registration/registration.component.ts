@@ -5,6 +5,7 @@ import { ConfirmPasswordValidator } from 'src/app/_helpers/confirmpassword.valid
 import { User } from '../../_models/user';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { StorageService } from '../../services/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -20,7 +21,8 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private fb : FormBuilder,
     private userService : UserService,
-    private storageService : StorageService
+    private storageService : StorageService,
+    private router : Router
     ) { }
 
   ngOnInit(): void {
@@ -52,6 +54,7 @@ export class RegistrationComponent implements OnInit {
         if(res.data){
           //console.log(res.data);
           this.storageService.setItem('currentUser', JSON.stringify(res.data));
+          this.router.navigate(['/home']);
         }
       });
 
